@@ -66,3 +66,26 @@ console.log(null >= 0);//true   null value is coerced to 0 during the comparison
 console.log("1"==1); //true
 console.log("1"===1); //false
 
+/* stack(primitive)- we will get copies ,  not affect original values
+heap(non-primitive) - get refernce, get changes in original value
+
+Primitive types (stack):
+When you declare a variable with a primitive type (e.g., number, string, boolean), the actual value is stored directly in the 
+variable. When you pass a primitive type as a parameter to a function or assign it to another variable, a copy of the value
+is passed or assigned. Changes in the new variable don't affect the original variable. */
+
+let num1 = 5;  // num1 is a primitive type stored in the stack
+let num2 = num1;  // Copying the value of num1 to num2
+num2 = 10;  // Changing num2 does not affect num1
+console.log(num1);  // Outputs 5
+
+/* Non-primitive types (heap):
+Non-primitive types (e.g., objects, arrays) are stored in the heap memory, and variables store references (memory addresses) 
+to the actual object.When you assign a non-primitive variable to another variable or pass it as a function parameter,
+you're copying the reference, not the actual object. Changes to the object through one reference will affect all references 
+pointing to that object. */
+
+let arr1 = [1, 2, 3];  // arr1 is a reference to an array stored in the heap
+let arr2 = arr1;  // Copying the reference, not the array itself
+arr2.push(4);  // Modifying the array through arr2 also affects arr1
+console.log(arr1);  // Outputs [1, 2, 3, 4]
