@@ -8,6 +8,7 @@ const {bookAuthorName}=book //This syntax is a shorthand for extracting a proper
 console.log(bookAuthorName);
 
 const {bookAuthorName:author}=book // we can destruct this object
+
 console.log(author);
 
 
