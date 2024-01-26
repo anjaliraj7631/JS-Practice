@@ -140,7 +140,7 @@ const person5 = new Person5("xyz", 30, "Punjab");
 
 console.log(person5);
 
-//Object Destruting
+
 const book={
     bookAuthorName:"JavaScript",
     price:296,
