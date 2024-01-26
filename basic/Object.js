@@ -59,6 +59,12 @@ person.age = 30;
 person.city = "New York";
 console.log(person);
 
+console.log(Object.keys(person));//it will return all key in form of array [ 'name', 'age', 'city' ]
+console.log(Object.values(person));//it will return all the values [ 'John', 30, 'New York' ]
+console.log(Object.entries(person));//it will return key value pair [[ 'name', 'John' ], [ 'age', 30 ], [ 'city', 'New York' ]]
+
+console.log(person.hasOwnProperty('city'));//to chaeck whether this property is persent or not
+
 const person1={
     email1:"anjaliraj76312@gmail.com",
     fullname:{
@@ -72,6 +78,8 @@ const person1={
 console.log(person1.fullname);//{ userfullname: { firstname: 'anjali', lastname: 'raj' } }
 console.log(person1.fullname.userfullname.firstname);
 
+
+
 const obj1={1:"a",2:"b"}
 const obj2={3:"c",4:"d"}
 
@@ -83,3 +91,51 @@ objects (obj1 and obj2).The subsequent arguments (obj1, obj2, etc.) are source o
 
 const obj4={...obj1,...obj2}// can also merge using spread operator
 console.log(obj4);
+
+//when object is coming from database it will in the form of array-object
+const users= [
+    {
+        id:1,
+        email:"ajd@gmail.com" 
+    },
+    {
+        id:2,
+        email:"avd@gmail.com" 
+    },
+    {
+        id:3,
+        email:"sdd@gmail.com" 
+    }
+    
+]
+console.log(users[2].email);
+
+//3.Object.create:
+const person3 = Object.create(null);//creating an object with no prototype chain, meaning it has no built-in methods or properties
+// inherited from the default Object prototype. This object is often referred to as a "null prototype" object
+person3.name = "Smith";
+person3.age = 28;
+person3.city = "USA";
+console.log(person3);//[Object: null prototype] { name: 'Smith', age: 28, city: 'USA' }
+
+//4.Function Constructor:
+function Person4(name, age, city) {
+  this.name = name;
+  this.age = age;
+  this.city = city;
+}
+const person4 = new Person4("Abc", 30, "delhi");
+console.log(person4);
+
+
+//5.Class Syntax (ES6 and later):
+class Person5 {
+  constructor(name, age, city) {
+    this.name = name;
+    this.age = age;
+    this.city = city;
+  }
+}
+const person5 = new Person5("xyz", 30, "Punjab");
+
+console.log(person5);
